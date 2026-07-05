@@ -8,7 +8,7 @@
 
 #include "baseElement.hpp"
 
-namespace UI
+namespace sui
 {
 class UiManager
 {
@@ -37,4 +37,4 @@ private:
 
   std::optional<std::shared_ptr<BaseElement>> m_focused;
 };
-} // namespace UI
+} // namespace sui

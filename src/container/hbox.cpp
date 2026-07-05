@@ -1,7 +1,7 @@
 #include "container/hbox.hpp"
 #include <SDL3/SDL_rect.h>
 
-using namespace UI;
+using namespace sui;
 
 void HBox::HandleResizeEvent(const SDL_FRect &space)
 {

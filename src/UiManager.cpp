@@ -7,7 +7,7 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_events.h>
 
-using namespace UI;
+using namespace sui;
 
 UiManager::UiManager(SDL_Renderer *renderer, const std::string &app_name)
 {
@@ -56,16 +56,16 @@ void UiManager::handleEvent(SDL_Event &event)
 
       switch (handled)
       {
-      case UI::EventResult::UNHANDLED:
+      case sui::EventResult::UNHANDLED:
         break;
-      case UI::EventResult::HANDLED:
+      case sui::EventResult::HANDLED:
         return; // quit trying to handle event
-      case UI::EventResult::HANDLED_UPDATE_FOCUS:
+      case sui::EventResult::HANDLED_UPDATE_FOCUS:
         // update focus and then stop
         if (!focused)
-          UI::Logger::Debug("Cleared focus");
+          sui::Logger::Debug("Cleared focus");
         else
-          UI::Logger::Debug("Updated focus, {}", m_focused == focused
+          sui::Logger::Debug("Updated focus, {}", m_focused == focused
                                                      ? "same element"
                                                      : "new element");
         m_focused = focused;
@@ -80,16 +80,16 @@ void UiManager::handleEvent(SDL_Event &event)
 
       switch (handled)
       {
-      case UI::EventResult::UNHANDLED:
+      case sui::EventResult::UNHANDLED:
         break;
-      case UI::EventResult::HANDLED:
+      case sui::EventResult::HANDLED:
         return; // quit trying to handle event
-      case UI::EventResult::HANDLED_UPDATE_FOCUS:
+      case sui::EventResult::HANDLED_UPDATE_FOCUS:
         // update focus and then stop
         if (!focused)
-          UI::Logger::Debug("Cleared focus");
+          sui::Logger::Debug("Cleared focus");
         else
-          UI::Logger::Debug("Updated focus, {}", m_focused == focused
+          sui::Logger::Debug("Updated focus, {}", m_focused == focused
                                                      ? "same element"
                                                      : "new element");
         m_focused = focused;

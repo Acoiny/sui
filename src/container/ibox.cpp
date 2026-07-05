@@ -2,7 +2,7 @@
 #include "baseElement.hpp"
 #include <numeric>
 
-using namespace UI;
+using namespace sui;
 
 void IBox::draw(SDL_Renderer *renderer)
 {

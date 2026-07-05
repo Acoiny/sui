@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <functional>
 
-namespace UI
+namespace sui
 {
 /**
  * Slider UI-Element. Will produce values between min and max.
@@ -241,4 +241,4 @@ private:
   SDL_FRect m_space;
   SDL_FRect m_bar;
 };
-}; // namespace UI
+}; // namespace sui

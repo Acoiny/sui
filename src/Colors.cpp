@@ -1,6 +1,6 @@
 #include "Colors.hpp"
 
-namespace UI
+namespace sui
 {
 namespace Color
 {
@@ -69,4 +69,4 @@ void LoadDefaultColorTheme()
 }
 
 } // namespace Color
-} // namespace UI
+} // namespace sui

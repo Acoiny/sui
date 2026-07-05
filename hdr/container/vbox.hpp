@@ -3,7 +3,7 @@
 #include "container/ibox.hpp"
 #include <SDL3/SDL_rect.h>
 
-namespace UI
+namespace sui
 {
 class VBox : public IBox
 {
@@ -13,4 +13,4 @@ public:
 
   void HandleResizeEvent(const SDL_FRect &space) override;
 };
-}; // namespace UI
+}; // namespace sui

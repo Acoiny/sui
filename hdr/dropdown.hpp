@@ -8,7 +8,7 @@
 #include <SDL3/SDL_rect.h>
 #include <vector>
 
-namespace UI
+namespace sui
 {
 class Dropdown : public BaseElement
 {
@@ -51,4 +51,4 @@ private:
    */
   SDL_FRect m_expanded_space;
 };
-}; // namespace UI
+}; // namespace sui

@@ -12,9 +12,9 @@
 
 static bool LoadFromFile(const std::string &filename);
 
-bool UI::Theme::LoadFromConfig()
+bool sui::Theme::LoadFromConfig()
 {
-  const auto app_name = UI::Config::get_application_name();
+  const auto app_name = sui::Config::get_application_name();
 
   std::string paths[] = {std::format("./.{}.theme", app_name),
                          Config::get_config_dir()};
@@ -25,12 +25,12 @@ bool UI::Theme::LoadFromConfig()
     {
       if (LoadFromFile(p))
       {
-        UI::Logger::Debug("Successfully loaded theme from '{}'", p);
+        sui::Logger::Debug("Successfully loaded theme from '{}'", p);
         return true;
       }
       else
       {
-        UI::Logger::Debug("Failed to load theme from '{}'", p);
+        sui::Logger::Debug("Failed to load theme from '{}'", p);
       }
     }
   }
@@ -51,7 +51,7 @@ static SDL_Color ParseColor(std::string value)
 {
   if (!value.starts_with('#'))
   {
-    UI::Logger::Warn("Illegal color value: '{}'", value);
+    sui::Logger::Warn("Illegal color value: '{}'", value);
     return {};
   }
 
@@ -90,17 +90,17 @@ static bool ApplyVariable(std::string variable, std::string value)
   std::transform(value.begin(), value.end(), value.begin(),
                  [](unsigned char c) { return std::tolower(c); });
 
-  UI::Logger::Debug("'{}' = '{}'", variable, value);
+  sui::Logger::Debug("'{}' = '{}'", variable, value);
 
 #define match(str, var)                                                        \
   else if (variable == str)                                                    \
   {                                                                            \
-    UI::Color::var = ParseColor(value);                                        \
+    sui::Color::var = ParseColor(value);                                       \
   }
 
   if (variable == "clear")
   {
-    UI::Color::CLEAR_COLOR = ParseColor(value);
+    sui::Color::CLEAR_COLOR = ParseColor(value);
   }
   // clang-format off
   match("background", BACKGROUND)

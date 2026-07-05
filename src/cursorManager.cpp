@@ -2,7 +2,7 @@
 #include <SDL3/SDL_mouse.h>
 #include <cassert>
 
-using namespace UI;
+using namespace sui;
 
 CursorManager::CursorManager()
 {

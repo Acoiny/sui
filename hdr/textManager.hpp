@@ -3,7 +3,7 @@
 #include <SDL3_ttf/SDL_ttf.h>
 #include <string>
 
-namespace UI
+namespace sui
 {
 class TextManager
 {
@@ -36,4 +36,4 @@ private:
 
   TTF_Font *m_font = nullptr;
 };
-} // namespace UI
+} // namespace sui

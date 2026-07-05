@@ -6,7 +6,7 @@
 #include <SDL3/SDL_render.h>
 #include <SDL3_ttf/SDL_ttf.h>
 
-using namespace UI;
+using namespace sui;
 
 Button::Button(float x, float y, float w, float h) : m_rect{x, y, w, h} {}
 

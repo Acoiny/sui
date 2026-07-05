@@ -5,7 +5,7 @@
 #include <SDL3_ttf/SDL_ttf.h>
 #include <string>
 
-namespace UI
+namespace sui
 {
 class TextButton : public Button
 {
@@ -26,4 +26,4 @@ private:
 
   std::string m_data;
 };
-} // namespace UI
+} // namespace sui

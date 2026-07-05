@@ -4,7 +4,7 @@
 #include <memory>
 #include <optional>
 
-namespace UI
+namespace sui
 {
 struct Margin
 {
@@ -61,4 +61,4 @@ protected:
 
   Margin m_margin;
 };
-} // namespace UI
+} // namespace sui

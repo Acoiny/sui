@@ -6,7 +6,7 @@
 
 #include "baseElement.hpp"
 
-namespace UI
+namespace sui
 {
 class TextBox : public BaseElement
 {
@@ -36,4 +36,4 @@ private:
 
   TTF_Text *m_text;
 };
-} // namespace UI
+} // namespace sui

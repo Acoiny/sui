@@ -9,7 +9,7 @@
 #include <cassert>
 #include <filesystem>
 
-using namespace UI;
+using namespace sui;
 
 TextManager *TextManager::m_instance = nullptr;
 

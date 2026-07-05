@@ -6,7 +6,7 @@
 #include <memory>
 #include <print>
 
-using namespace UI;
+using namespace sui;
 
 Dropdown::Dropdown() : m_main_button(std::make_shared<TextButton>("<empty>"))
 {

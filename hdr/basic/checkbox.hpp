@@ -5,7 +5,7 @@
 #include <SDL3/SDL_rect.h>
 #include <functional>
 
-namespace UI
+namespace sui
 {
 class CheckBox : public BaseElement
 {
@@ -38,4 +38,4 @@ private:
   SDL_Color m_color_checked = Color::CHECKBOX_CHECKED;
   SDL_Color m_color_unchecked = Color::CHECKBOX_UNCHECKED;
 };
-} // namespace UI
+} // namespace sui

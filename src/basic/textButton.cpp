@@ -6,7 +6,7 @@
 #include "Colors.hpp"
 #include "textManager.hpp"
 
-using namespace UI;
+using namespace sui;
 
 TextButton::TextButton(const std::string &text) : TextButton(0, 0, text) {}
 

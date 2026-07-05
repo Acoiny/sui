@@ -5,7 +5,7 @@
 #include <memory>
 #include <vector>
 
-namespace UI
+namespace sui
 {
 class IBox : public BaseElement
 {
@@ -54,4 +54,4 @@ protected:
   // by this number
   float m_divisor;
 };
-} // namespace UI
+} // namespace sui

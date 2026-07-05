@@ -5,7 +5,7 @@
 #include <SDL3/SDL_pixels.h>
 #include <functional>
 
-namespace UI
+namespace sui
 {
 /**
  * State indicating the last state of the button
@@ -59,4 +59,4 @@ protected:
 
   ButtonState m_state = ButtonState::IDLE;
 };
-} // namespace UI
+} // namespace sui

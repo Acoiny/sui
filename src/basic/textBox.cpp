@@ -6,7 +6,7 @@
 
 #include "logger.hpp"
 
-using namespace UI;
+using namespace sui;
 
 TextBox::TextBox(const std::string &text, float fontsize)
     : TextBox(0, 0, text, fontsize)

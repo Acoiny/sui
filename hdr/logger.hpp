@@ -7,7 +7,7 @@
 #include <string_view>
 #include <type_traits>
 #include <utility>
-namespace UI
+namespace sui
 {
 class Logger
 {
@@ -99,4 +99,4 @@ private:
 
   inline static Mode s_mode = Mode::none;
 };
-} // namespace UI
+} // namespace sui

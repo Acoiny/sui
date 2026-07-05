@@ -3,7 +3,7 @@
 #include <string>
 #include <string_view>
 
-namespace UI
+namespace sui
 {
 namespace Config
 {
@@ -17,4 +17,4 @@ const std::string_view get_application_name();
 
 const std::string get_config_dir();
 } // namespace Config
-} // namespace UI
+} // namespace sui

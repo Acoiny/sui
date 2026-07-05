@@ -2,7 +2,7 @@
 
 #include "container/ibox.hpp"
 
-namespace UI
+namespace sui
 {
 class HBox : public IBox
 {
@@ -12,4 +12,4 @@ public:
 
   void HandleResizeEvent(const SDL_FRect &space) override;
 };
-} // namespace UI
+} // namespace sui

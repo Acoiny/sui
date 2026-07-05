@@ -2,7 +2,7 @@
 #include "baseElement.hpp"
 #include <SDL3/SDL_render.h>
 
-using namespace UI;
+using namespace sui;
 
 CheckBox::CheckBox(bool value) : m_value(value) {}
 

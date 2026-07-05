@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SDL3/SDL_mouse.h>
-namespace UI
+namespace sui
 {
 class CursorManager
 {
@@ -30,4 +30,4 @@ public:
 private:
   SDL_Cursor *m_cursors[5] = {0};
 };
-} // namespace UI
+} // namespace sui

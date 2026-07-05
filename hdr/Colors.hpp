@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SDL3/SDL_pixels.h>
-namespace UI
+namespace sui
 {
 namespace Color
 {
@@ -32,4 +32,4 @@ extern SDL_Color CHECKBOX_UNCHECKED;
 void LoadDevelopColorTheme();
 void LoadDefaultColorTheme();
 }; // namespace Color
-} // namespace UI
+} // namespace sui

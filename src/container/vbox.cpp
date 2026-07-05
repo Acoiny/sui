@@ -1,6 +1,6 @@
 #include "container/vbox.hpp"
 
-using namespace UI;
+using namespace sui;
 
 void VBox::HandleResizeEvent(const SDL_FRect &space)
 {

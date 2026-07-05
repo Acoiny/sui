@@ -1,6 +1,6 @@
 #pragma once
 
-namespace UI
+namespace sui
 {
 namespace Theme
 {
@@ -14,4 +14,4 @@ namespace Theme
  */
 bool LoadFromConfig();
 } // namespace Theme
-} // namespace UI
+} // namespace sui
