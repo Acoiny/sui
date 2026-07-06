@@ -6,8 +6,8 @@
 #include <cmath>
 #include <cstdlib>
 #include <functional>
-#include <sui/Ui/Colors.hpp>
-#include <sui/Ui/baseElement.hpp>
+#include <sui/Colors.hpp>
+#include <sui/baseElement.hpp>
 
 namespace sui
 {
