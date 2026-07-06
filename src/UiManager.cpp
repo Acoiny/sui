@@ -1,11 +1,11 @@
-#include "UiManager.hpp"
-#include "Colors.hpp"
-#include "config.hpp"
-#include "logger.hpp"
-#include "textManager.hpp"
-#include "themes.hpp"
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_events.h>
+#include <sui/Colors.hpp>
+#include <sui/UiManager.hpp>
+#include <sui/config.hpp>
+#include <sui/logger.hpp>
+#include <sui/textManager.hpp>
+#include <sui/themes.hpp>
 
 using namespace sui;
 
@@ -66,8 +66,8 @@ void UiManager::handleEvent(SDL_Event &event)
           sui::Logger::Debug("Cleared focus");
         else
           sui::Logger::Debug("Updated focus, {}", m_focused == focused
-                                                     ? "same element"
-                                                     : "new element");
+                                                      ? "same element"
+                                                      : "new element");
         m_focused = focused;
         return;
       }
@@ -90,8 +90,8 @@ void UiManager::handleEvent(SDL_Event &event)
           sui::Logger::Debug("Cleared focus");
         else
           sui::Logger::Debug("Updated focus, {}", m_focused == focused
-                                                     ? "same element"
-                                                     : "new element");
+                                                      ? "same element"
+                                                      : "new element");
         m_focused = focused;
         return;
       }

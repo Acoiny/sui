@@ -1,4 +1,4 @@
-#include "themes.hpp"
+#include <sui/themes.hpp>
 
 #include <algorithm>
 #include <cctype>
@@ -6,9 +6,9 @@
 #include <fstream>
 #include <string>
 
-#include "Colors.hpp"
-#include "config.hpp"
-#include "logger.hpp"
+#include <sui/Colors.hpp>
+#include <sui/config.hpp>
+#include <sui/logger.hpp>
 
 static bool LoadFromFile(const std::string &filename);
 

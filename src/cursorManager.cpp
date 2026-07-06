@@ -1,6 +1,6 @@
-#include "cursorManager.hpp"
 #include <SDL3/SDL_mouse.h>
 #include <cassert>
+#include <sui/cursorManager.hpp>
 
 using namespace sui;
 

@@ -4,7 +4,7 @@
 #include <SDL3_ttf/SDL_ttf.h>
 #include <string>
 
-#include "baseElement.hpp"
+#include <sui/baseElement.hpp>
 
 namespace sui
 {

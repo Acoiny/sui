@@ -1,6 +1,6 @@
 #pragma once
 
-#include "container/ibox.hpp"
+#include <sui/container/ibox.hpp>
 
 namespace sui
 {

@@ -1,10 +1,10 @@
-#include "basic/textBox.hpp"
-#include "Colors.hpp"
-#include "textManager.hpp"
 #include <SDL3/SDL_error.h>
 #include <SDL3_ttf/SDL_ttf.h>
+#include <sui/Colors.hpp>
+#include <sui/basic/textBox.hpp>
+#include <sui/textManager.hpp>
 
-#include "logger.hpp"
+#include <sui/logger.hpp>
 
 using namespace sui;
 

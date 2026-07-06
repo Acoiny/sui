@@ -1,4 +1,4 @@
-#include "Colors.hpp"
+#include <sui/Colors.hpp>
 
 namespace sui
 {

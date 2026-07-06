@@ -1,4 +1,4 @@
-#include "config.hpp"
+#include <sui/config.hpp>
 
 #include <cassert>
 #include <filesystem>

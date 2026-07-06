@@ -1,10 +1,10 @@
-#include "basic/textButton.hpp"
 #include <SDL3/SDL_render.h>
 #include <SDL3/SDL_stdinc.h>
 #include <SDL3_ttf/SDL_ttf.h>
+#include <sui/basic/textButton.hpp>
 
-#include "Colors.hpp"
-#include "textManager.hpp"
+#include <sui/Colors.hpp>
+#include <sui/textManager.hpp>
 
 using namespace sui;
 

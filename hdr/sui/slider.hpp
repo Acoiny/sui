@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Ui/Colors.hpp"
-#include "Ui/baseElement.hpp"
 #include <SDL3/SDL_rect.h>
 #include <SDL3/SDL_render.h>
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
 #include <functional>
+#include <sui/Ui/Colors.hpp>
+#include <sui/Ui/baseElement.hpp>
 
 namespace sui
 {

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "container/ibox.hpp"
 #include <SDL3/SDL_rect.h>
+#include <sui/container/ibox.hpp>
 
 namespace sui
 {

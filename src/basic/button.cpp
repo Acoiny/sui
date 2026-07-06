@@ -1,10 +1,10 @@
-#include "basic/button.hpp"
-#include "Colors.hpp"
-#include "baseElement.hpp"
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_events.h>
 #include <SDL3/SDL_render.h>
 #include <SDL3_ttf/SDL_ttf.h>
+#include <sui/Colors.hpp>
+#include <sui/baseElement.hpp>
+#include <sui/basic/button.hpp>
 
 using namespace sui;
 

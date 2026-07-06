@@ -1,6 +1,6 @@
 #pragma once
 
-#include "basic/button.hpp"
+#include <sui/basic/button.hpp>
 
 #include <SDL3_ttf/SDL_ttf.h>
 #include <string>

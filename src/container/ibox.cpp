@@ -1,6 +1,6 @@
-#include "container/ibox.hpp"
-#include "baseElement.hpp"
 #include <numeric>
+#include <sui/baseElement.hpp>
+#include <sui/container/ibox.hpp>
 
 using namespace sui;
 

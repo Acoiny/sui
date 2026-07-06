@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Colors.hpp"
-#include "baseElement.hpp"
 #include <SDL3/SDL_rect.h>
 #include <functional>
+#include <sui/Colors.hpp>
+#include <sui/baseElement.hpp>
 
 namespace sui
 {

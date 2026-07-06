@@ -1,6 +1,6 @@
-#include "textManager.hpp"
-#include "embed_data.hpp"
-#include "logger.hpp"
+#include <sui/embed_data.hpp>
+#include <sui/logger.hpp>
+#include <sui/textManager.hpp>
 
 #include <SDL3/SDL_error.h>
 #include <SDL3/SDL_iostream.h>

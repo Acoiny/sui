@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Colors.hpp"
-#include "baseElement.hpp"
-#include "basic/textButton.hpp"
+#include <sui/Colors.hpp>
+#include <sui/baseElement.hpp>
+#include <sui/basic/textButton.hpp>
 
 #include <SDL3/SDL_pixels.h>
 #include <SDL3/SDL_rect.h>

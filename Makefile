@@ -1,6 +1,6 @@
 MAKEFLAGS=-j
 
-BINARY := sui.a
+BINARY := libsui.a
 
 # prefix with debug, to make running as easy as typing d-TAB
 BINARY_DEBUG := debug_$(BINARY)

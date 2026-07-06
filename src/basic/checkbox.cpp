@@ -1,6 +1,6 @@
-#include "basic/checkbox.hpp"
-#include "baseElement.hpp"
 #include <SDL3/SDL_render.h>
+#include <sui/baseElement.hpp>
+#include <sui/basic/checkbox.hpp>
 
 using namespace sui;
 
