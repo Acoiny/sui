@@ -1,6 +1,5 @@
 #pragma once
 
-#include <initializer_list>
 #include <sui/Colors.hpp>
 #include <sui/baseElement.hpp>
 #include <sui/basic/textButton.hpp>

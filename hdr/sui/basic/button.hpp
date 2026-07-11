@@ -36,16 +36,6 @@ public:
    */
   std::function<void()> onLeftClick;
 
-  /**
-   * Gets called, when the mouse moves above this button
-   */
-  std::function<void()> onMouseEnter;
-
-  /**
-   * Gets called on right click
-   */
-  std::function<void()> onRightClick;
-
 private:
   inline bool isIntersecting(float x, float y)
   {

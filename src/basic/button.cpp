@@ -55,13 +55,23 @@ bool Button::HandleMouseEvent(SDL_Event &event)
     float mx = event.motion.x, my = event.motion.y;
     bool intersects = isIntersecting(mx, my);
 
+    // if (intersects)
+    // {
+    //   if (m_state == ButtonState::IDLE)
+    //     m_state = ButtonState::MOUSE_HOVER;
+    // }
+    // // if the mouse is not over this button AND it's state is not idle,
+    // // we set it's state but also say, that the event has not been handled.
+    // else if (m_state != ButtonState::IDLE)
+    // {
+    //   m_state = ButtonState::IDLE;
+    // }
+
     // mouse entered
     if (intersects && m_state == ButtonState::IDLE)
     {
       m_state = ButtonState::MOUSE_HOVER;
 
-      if (onMouseEnter)
-        onMouseEnter();
       handled = true;
     }
     // mouse is not over button
