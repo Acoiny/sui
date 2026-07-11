@@ -28,8 +28,7 @@ public:
   virtual ~Button() override = default;
 
   void draw(SDL_Renderer *renderer) override;
-  std::pair<EventResult, std::optional<std::shared_ptr<BaseElement>>>
-  HandleMouseEvent(SDL_Event &event) override;
+  bool HandleMouseEvent(SDL_Event &event) override;
   void HandleResizeEvent(const SDL_FRect &space) override;
 
   /**

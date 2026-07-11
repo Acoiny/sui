@@ -21,8 +21,7 @@ public:
 
   void draw(SDL_Renderer *renderer) override;
 
-  std::pair<sui::EventResult, std::optional<std::shared_ptr<BaseElement>>>
-  HandleMouseEvent(SDL_Event &event) override;
+  bool HandleMouseEvent(SDL_Event &event) override;
 
   void setTexture(SDL_Renderer *renderer, SDL_Surface *surface,
                   SDL_ScaleMode scaleMode = SDL_SCALEMODE_NEAREST,

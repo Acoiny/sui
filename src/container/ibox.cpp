@@ -12,18 +12,15 @@ void IBox::draw(SDL_Renderer *renderer)
   }
 }
 
-std::pair<EventResult, std::optional<std::shared_ptr<BaseElement>>>
-IBox::HandleMouseEvent(SDL_Event &event)
+bool IBox::HandleMouseEvent(SDL_Event &event)
 {
   for (auto el : m_elements)
   {
-    auto [handled, focused] = el.first->HandleMouseEvent(event);
-
-    if (handled != EventResult::UNHANDLED)
-      return {handled, focused};
+    if (el.first->HandleMouseEvent(event))
+      return true;
   }
 
-  return {EventResult::UNHANDLED, {}};
+  return false;
 }
 
 void IBox::updateDivisor()

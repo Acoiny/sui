@@ -12,6 +12,8 @@ namespace sui
 {
 class UiManager
 {
+  friend class BaseElement;
+
 public:
   UiManager(SDL_Renderer *renderer, const std::string &app_name);
   ~UiManager();
@@ -35,6 +37,6 @@ public:
 private:
   std::vector<std::shared_ptr<BaseElement>> m_elements;
 
-  std::optional<std::shared_ptr<BaseElement>> m_focused;
+  std::weak_ptr<BaseElement> m_focused;
 };
 } // namespace sui

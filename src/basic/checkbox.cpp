@@ -13,10 +13,9 @@ void CheckBox::draw(SDL_Renderer *renderer)
   SDL_RenderFillRect(renderer, &m_rect);
 }
 
-std::pair<EventResult, std::optional<std::shared_ptr<BaseElement>>>
-CheckBox::HandleMouseEvent(SDL_Event &event)
+bool CheckBox::HandleMouseEvent(SDL_Event &event)
 {
-  EventResult handled = EventResult::UNHANDLED;
+  bool handled = false;
 
   float m_x = event.motion.x;
   float m_y = event.motion.y;
@@ -30,9 +29,9 @@ CheckBox::HandleMouseEvent(SDL_Event &event)
         onChange(m_value);
     }
 
-    handled = EventResult::HANDLED;
+    handled = true;
   }
-  return {handled, {}};
+  return handled;
 }
 
 void CheckBox::HandleResizeEvent(const SDL_FRect &space)

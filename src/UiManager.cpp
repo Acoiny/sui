@@ -11,6 +11,8 @@ using namespace sui;
 
 UiManager::UiManager(SDL_Renderer *renderer, const std::string &app_name)
 {
+  BaseElement::s_uimanager = this;
+
   Config::set_application_name(app_name);
 
   // load default config first, then overwrite it with custom config file
@@ -50,51 +52,18 @@ void UiManager::handleEvent(SDL_Event &event)
       event.type == SDL_EVENT_MOUSE_BUTTON_UP ||
       event.type == SDL_EVENT_MOUSE_WHEEL)
   {
-    if (m_focused.has_value())
+    // if the focsed element has handled the event, just return
+    if (auto el = m_focused.lock())
     {
-      auto [handled, focused] = m_focused->get()->HandleMouseEvent(event);
-
-      switch (handled)
-      {
-      case sui::EventResult::UNHANDLED:
-        break;
-      case sui::EventResult::HANDLED:
-        return; // quit trying to handle event
-      case sui::EventResult::HANDLED_UPDATE_FOCUS:
-        // update focus and then stop
-        if (!focused)
-          sui::Logger::Debug("Cleared focus");
-        else
-          sui::Logger::Debug("Updated focus, {}", m_focused == focused
-                                                      ? "same element"
-                                                      : "new element");
-        m_focused = focused;
+      if (el->HandleMouseEvent(event))
         return;
-      }
     }
 
     for (auto &btn : m_elements)
     {
       // stop iterating, if event has been handled
-      auto [handled, focused] = btn->HandleMouseEvent(event);
-
-      switch (handled)
-      {
-      case sui::EventResult::UNHANDLED:
-        break;
-      case sui::EventResult::HANDLED:
-        return; // quit trying to handle event
-      case sui::EventResult::HANDLED_UPDATE_FOCUS:
-        // update focus and then stop
-        if (!focused)
-          sui::Logger::Debug("Cleared focus");
-        else
-          sui::Logger::Debug("Updated focus, {}", m_focused == focused
-                                                      ? "same element"
-                                                      : "new element");
-        m_focused = focused;
+      if (btn->HandleMouseEvent(event))
         return;
-      }
     }
   }
 }
@@ -107,8 +76,8 @@ void UiManager::draw(SDL_Renderer *renderer)
   }
 
   // draw the focused element on top
-  if (m_focused.has_value())
-    m_focused->get()->draw(renderer);
+  if (auto el = m_focused.lock())
+    el->draw(renderer);
 }
 
 bool UiManager::isEventRelevant(SDL_Event &event)

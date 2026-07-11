@@ -28,23 +28,20 @@ void Dropdown::draw(SDL_Renderer *renderer)
   }
 }
 
-std::pair<EventResult, std::optional<std::shared_ptr<BaseElement>>>
-Dropdown::HandleMouseEvent(SDL_Event &event)
+bool Dropdown::HandleMouseEvent(SDL_Event &event)
 {
-  EventResult handled = EventResult::UNHANDLED;
-  std::optional<std::shared_ptr<BaseElement>> focus;
+  bool handled = false;
 
   {
-    auto [m_handled, m_focus] = m_main_button->HandleMouseEvent(event);
-    if (m_handled != EventResult::UNHANDLED)
+    if (m_main_button->HandleMouseEvent(event))
     {
       if (event.type == SDL_EVENT_MOUSE_BUTTON_UP)
       {
-        m_handled = EventResult::HANDLED_UPDATE_FOCUS;
-        m_focus = this->shared_from_this();
+        handled = true;
+        focus();
       }
 
-      return {m_handled, m_focus};
+      return handled;
     }
   }
 
@@ -55,13 +52,9 @@ Dropdown::HandleMouseEvent(SDL_Event &event)
   {
     for (auto &el : m_options)
     {
-      auto [b_handled, b_focused] = el->HandleMouseEvent(event);
-
-      // a button handled it
-      if (b_handled != EventResult::UNHANDLED)
+      if (el->HandleMouseEvent(event))
       {
-        handled = b_handled;
-        focus = b_focused;
+        handled = true;
         break;
       }
     }
@@ -72,13 +65,12 @@ Dropdown::HandleMouseEvent(SDL_Event &event)
     case SDL_EVENT_MOUSE_BUTTON_UP:
     {
       m_expanded = false;
-      handled = EventResult::HANDLED_UPDATE_FOCUS;
       break;
     }
     }
   }
 
-  return {handled, focus};
+  return handled;
 }
 
 void Dropdown::HandleResizeEvent(const SDL_FRect &space)

@@ -25,10 +25,9 @@ void ZoomableTextureRect::draw(SDL_Renderer *renderer)
   }
 }
 
-std::pair<sui::EventResult, std::optional<std::shared_ptr<sui::BaseElement>>>
-ZoomableTextureRect::HandleMouseEvent(SDL_Event &event)
+bool ZoomableTextureRect::HandleMouseEvent(SDL_Event &event)
 {
-  sui::EventResult handled = sui::EventResult::UNHANDLED;
+  bool handled = false;
 
   switch (event.type)
   {
@@ -38,7 +37,7 @@ ZoomableTextureRect::HandleMouseEvent(SDL_Event &event)
     {
       m_state = State::DRAGGING;
       sui::CursorManager::SetCursor(sui::CursorManager::CursorStyle::MOVE);
-      handled = sui::EventResult::HANDLED;
+      handled = true;
     }
     break;
   }
@@ -65,7 +64,7 @@ ZoomableTextureRect::HandleMouseEvent(SDL_Event &event)
         m_state = State::IDLE;
         sui::CursorManager::SetCursor();
       }
-      handled = sui::EventResult::HANDLED;
+      handled = true;
     }
   }
   case SDL_EVENT_MOUSE_MOTION:
@@ -87,7 +86,7 @@ ZoomableTextureRect::HandleMouseEvent(SDL_Event &event)
         m_mouse_pos = {(mx - m_texture_space.x), (my - m_texture_space.y)};
         m_state = State::FOCUSED;
         sui::CursorManager::SetCursor(sui::CursorManager::CursorStyle::POINT);
-        return {handled, {}};
+        return handled;
       }
       break;
     }
@@ -111,7 +110,7 @@ ZoomableTextureRect::HandleMouseEvent(SDL_Event &event)
         m_state = State::IDLE;
         sui::CursorManager::SetCursor();
       }
-      handled = sui::EventResult::HANDLED;
+      handled = true;
       break;
     }
     case State::DRAGGING:
@@ -133,7 +132,7 @@ ZoomableTextureRect::HandleMouseEvent(SDL_Event &event)
       clampRenderRect();
 
       m_mouse_pos = new_mouse_pos;
-      handled = sui::EventResult::HANDLED;
+      handled = true;
       break;
     }
     default:
@@ -181,13 +180,13 @@ ZoomableTextureRect::HandleMouseEvent(SDL_Event &event)
 
     clampRenderRect();
 
-    handled = sui::EventResult::HANDLED;
+    handled = true;
     break;
   }
   default:
     break;
   }
-  return {};
+  return handled;
 }
 
 void ZoomableTextureRect::setTexture(SDL_Renderer *renderer,

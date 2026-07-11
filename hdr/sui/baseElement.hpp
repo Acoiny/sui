@@ -2,10 +2,13 @@
 
 #include <SDL3/SDL.h>
 #include <memory>
-#include <optional>
 
 namespace sui
 {
+/// forward declarations
+class UiManager;
+/// end forward declarations
+
 struct Margin
 {
   float top = 0;
@@ -14,15 +17,12 @@ struct Margin
   float left = 0;
 };
 
-enum class EventResult
-{
-  UNHANDLED = 0,
-  HANDLED,
-  HANDLED_UPDATE_FOCUS,
-};
-
 class BaseElement : public std::enable_shared_from_this<BaseElement>
 {
+  friend class UiManager;
+  // static ui manager instance, available for all elements
+  static UiManager *s_uimanager;
+
 public:
   virtual ~BaseElement() = default;
 
@@ -34,8 +34,7 @@ public:
    * @param SDL_Event& event
    * @returns true when the event has been handled
    */
-  virtual std::pair<EventResult, std::optional<std::shared_ptr<BaseElement>>>
-  HandleMouseEvent(SDL_Event &event) = 0;
+  virtual bool HandleMouseEvent(SDL_Event &event) = 0;
 
   /**
    * Handles resizing when a resize event occurs.
@@ -58,6 +57,11 @@ protected:
     rect.y += m_margin.top;
     rect.h -= m_margin.top + m_margin.bottom;
   }
+
+  /**
+   * Focuses this element.
+   */
+  void focus();
 
   Margin m_margin;
 };

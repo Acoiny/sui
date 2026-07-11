@@ -45,10 +45,9 @@ void Button::draw(SDL_Renderer *renderer)
   }
 }
 
-std::pair<EventResult, std::optional<std::shared_ptr<BaseElement>>>
-Button::HandleMouseEvent(SDL_Event &event)
+bool Button::HandleMouseEvent(SDL_Event &event)
 {
-  EventResult handled = EventResult::UNHANDLED;
+  bool handled = false;
   switch (event.type)
   {
   case SDL_EVENT_MOUSE_MOTION:
@@ -63,13 +62,13 @@ Button::HandleMouseEvent(SDL_Event &event)
 
       if (onMouseEnter)
         onMouseEnter();
-      handled = EventResult::HANDLED;
+      handled = true;
     }
     // mouse is not over button
     else if (!intersects && m_state == ButtonState::MOUSE_HOVER)
     {
       m_state = ButtonState::IDLE;
-      handled = EventResult::HANDLED;
+      handled = true;
     }
     break;
   }
@@ -78,7 +77,7 @@ Button::HandleMouseEvent(SDL_Event &event)
     if (m_state == ButtonState::MOUSE_HOVER)
     {
       m_state = ButtonState::MOUSE_HELD;
-      handled = EventResult::HANDLED;
+      handled = true;
     }
     break;
   }
@@ -99,13 +98,13 @@ Button::HandleMouseEvent(SDL_Event &event)
       {
         m_state = ButtonState::IDLE;
       }
-      handled = EventResult::HANDLED;
+      handled = true;
     }
     break;
   }
   }
 
-  return {handled, {}};
+  return handled;
 }
 
 void Button::HandleResizeEvent(const SDL_FRect &space)
